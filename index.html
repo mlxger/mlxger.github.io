@@ -3,389 +3,458 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI 算法工程师 · 计算机视觉 · 大语言模型 · AI Agent">
-<title>Fengyan Lin — AI Engineer</title>
+<meta name="description" content="Fengyan Lin — AI Research Engineer, Fujian Normal University">
+<title>Fengyan Lin | 个人主页 · Homepage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* ================================================
+/* ══════════════════════════════════════════════════
    RESET
-================================================ */
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
-img  { max-width:100%; height:auto; display:block; }
-ul   { list-style:none; }
-a    { color:inherit; text-decoration:none; }
+══════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit}
 
-/* ================================================
-   TOKENS
-================================================ */
-:root {
-  --bg:       #f7f7f4;
-  --surface:  #ffffff;
-  --border:   #e8e8e2;
-  --border2:  #d1d1c8;
-  --txt:      #111110;
-  --txt2:     #52524e;
-  --txt3:     #9a9a92;
-  --green:    #16a34a;
-  --g-bg:     #f0fdf4;
-  --g-bd:     #bbf7d0;
-  --mono:     'JetBrains Mono','Fira Code','Consolas',monospace;
-  --sans:     'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --r:        8px;
-  --max:      860px;
-  --px:       24px;
+/* ══════════════════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════════════════ */
+:root{
+  --bg:        #ffffff;
+  --bg2:       #fafaf8;
+  --border:    #e8e7e2;
+  --border2:   #d0cfc9;
+  --txt:       #0f0f0e;
+  --txt2:      #52524e;
+  --txt3:      #9e9d97;
+  --green:     #16a34a;
+  --gbg:       #f0fdf4;
+  --gbd:       #bbf7d0;
+  --blue:      #1d4ed8;
+  --bbg:       #eff6ff;
+  --bbd:       #bfdbfe;
+  --red:       #dc2626;
+  --rbg:       #fef2f2;
+  --rbd:       #fecaca;
+  --amber:     #b45309;
+  --abg:       #fffbeb;
+  --abd:       #fde68a;
+  --purple:    #6d28d9;
+  --pbg:       #f5f3ff;
+  --pbd:       #ddd6fe;
+  --sans:      'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:      'JetBrains Mono','Fira Code','Consolas',monospace;
+  --max:       780px;
+  --px:        28px;
 }
 
-/* ================================================
+/* ══════════════════════════════════════════════════
    BASE
-================================================ */
-body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--txt);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+══════════════════════════════════════════════════ */
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
 }
-::-webkit-scrollbar { width:4px; }
-::-webkit-scrollbar-thumb { background:var(--border2); border-radius:2px; }
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--px)}
 
-/* ================================================
-   LAYOUT
-================================================ */
-.wrap { max-width:var(--max); margin:0 auto; padding:0 var(--px); }
-
-/* ================================================
+/* ══════════════════════════════════════════════════
    NAV
-================================================ */
-#nav {
-  position:sticky; top:0; z-index:99;
-  background:rgba(247,247,244,.92);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
+══════════════════════════════════════════════════ */
+#nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
 }
-.nav-inner {
-  max-width:var(--max); margin:0 auto;
-  padding:0 var(--px); height:54px;
-  display:flex; align-items:center; justify-content:space-between;
+.nav-inner{
+  max-width:var(--max);margin:0 auto;padding:0 var(--px);
+  height:50px;display:flex;align-items:center;justify-content:space-between;
 }
-.nav-logo {
-  font-family:var(--mono); font-size:.84rem; font-weight:700;
-  color:var(--txt); display:flex; align-items:center; gap:1px;
+.nav-brand{
+  display:flex;align-items:baseline;gap:8px;
+  font-size:.88rem;font-weight:600;color:var(--txt);letter-spacing:-.01em;
 }
-.nav-cursor {
-  display:inline-block; width:7px; height:14px;
-  background:var(--green); margin-left:3px; vertical-align:middle;
-  animation:blink 1.1s step-end infinite;
+.nav-brand-sub{
+  font-family:var(--mono);font-size:.68rem;
+  color:var(--green);font-weight:500;letter-spacing:.02em;
 }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-.nav-ul { display:flex; gap:2px; }
-.nav-ul a {
-  font-family:var(--mono); font-size:.74rem; color:var(--txt2);
-  padding:4px 9px; border-radius:5px;
-  transition:color .15s,background .15s;
+.nav-menu{display:flex;align-items:center;gap:0}
+.nav-menu a{
+  font-size:.78rem;color:var(--txt2);
+  padding:5px 11px;border-radius:5px;
+  transition:color .14s,background .14s;
   white-space:nowrap;
 }
-.nav-ul a:hover { color:var(--txt); background:var(--border); }
-.nav-ul a.active { color:var(--green); background:var(--g-bg); }
-.nav-ham {
-  display:none; flex-direction:column; gap:5px;
-  background:none; border:none; cursor:pointer; padding:4px;
+.nav-menu a:hover{color:var(--txt);background:#f2f1ed}
+.nav-menu a.active{color:var(--green)}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:5px;
 }
-.nav-ham span {
-  display:block; width:20px; height:1.5px;
-  background:var(--txt); border-radius:1px; transition:.25s;
+.hamburger span{
+  display:block;width:19px;height:1.5px;
+  background:var(--txt);border-radius:1px;transition:.22s;
 }
-.nav-ham.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
-.nav-ham.open span:nth-child(2) { opacity:0; }
-.nav-ham.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
-/* ================================================
-   HERO
-================================================ */
-#hero {
-  padding:72px 0 56px;
-  background:var(--surface);
-  border-bottom:1px solid var(--border);
+/* ══════════════════════════════════════════════════
+   SECTION SHELL
+══════════════════════════════════════════════════ */
+.sec{padding:50px 0}
+.sec+.sec{border-top:1px solid var(--border)}
+.sec-label{
+  font-family:var(--mono);font-size:.68rem;color:var(--green);
+  font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:3px;
 }
-.hero-eyebrow {
-  font-family:var(--mono); font-size:.76rem; color:var(--green);
-  display:flex; align-items:center; gap:8px; margin-bottom:14px;
-  letter-spacing:.04em;
+.sec-title{
+  font-size:1.12rem;font-weight:700;letter-spacing:-.025em;color:var(--txt);
+  margin-bottom:22px;
 }
-.hero-eyebrow::before { content:''; width:20px; height:1px; background:var(--green); }
-.hero-name {
-  font-size:clamp(2rem,5vw,3.2rem); font-weight:700;
-  letter-spacing:-.035em; line-height:1.08; margin-bottom:10px;
+.sec-title span{
+  font-size:.82rem;font-weight:400;color:var(--txt3);
+  margin-left:8px;letter-spacing:0;
 }
-.hero-role {
-  font-family:var(--mono); font-size:.88rem; color:var(--txt2);
-  margin-bottom:18px;
-}
-.hero-bio {
-  font-size:.92rem; color:var(--txt2); max-width:500px;
-  line-height:1.78; margin-bottom:24px;
-}
-.hero-chips { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:30px; }
-.chip {
-  font-family:var(--mono); font-size:.72rem;
-  padding:3px 9px; border-radius:4px;
-  background:var(--g-bg); color:var(--green);
-  border:1px solid var(--g-bd);
-}
-.chip.n { background:#f4f4f5; color:var(--txt2); border-color:var(--border2); }
-.hero-stats { display:flex; flex-wrap:wrap; gap:28px; }
-.hstat-n { font-family:var(--mono); font-size:1.35rem; font-weight:700; line-height:1; }
-.hstat-l { font-size:.7rem; color:var(--txt3); margin-top:3px; }
 
-/* ================================================
-   SECTION COMMON
-================================================ */
-.sec { padding:60px 0; }
-.sec.alt { background:var(--surface); }
-.sec-kicker {
-  font-family:var(--mono); font-size:.7rem; color:var(--green);
-  letter-spacing:.12em; margin-bottom:5px;
-  display:flex; align-items:center; gap:5px;
+/* ══════════════════════════════════════════════════
+   BADGE SYSTEM
+══════════════════════════════════════════════════ */
+.bd{
+  display:inline-flex;align-items:center;
+  font-family:var(--mono);font-size:.67rem;font-weight:500;
+  padding:2px 7px;border-radius:3px;white-space:nowrap;
 }
-.sec-kicker::before { content:'//'; }
-.sec-title { font-size:1.3rem; font-weight:700; letter-spacing:-.02em; margin-bottom:4px; }
-.sec-bar { width:28px; height:2px; background:var(--green); margin-bottom:28px; }
+.bd-g  {background:var(--gbg);color:var(--green);border:1px solid var(--gbd)}
+.bd-b  {background:var(--bbg);color:var(--blue);border:1px solid var(--bbd)}
+.bd-r  {background:var(--rbg);color:var(--red);border:1px solid var(--rbd)}
+.bd-a  {background:var(--abg);color:var(--amber);border:1px solid var(--abd)}
+.bd-p  {background:var(--pbg);color:var(--purple);border:1px solid var(--pbd)}
+.bd-n  {background:var(--bg2);color:var(--txt2);border:1px solid var(--border)}
 
-/* ================================================
-   EDUCATION GRID
-================================================ */
-.edu-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
-.edu-card {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--r); padding:20px;
-  position:relative; overflow:hidden;
+/* ══════════════════════════════════════════════════
+   ABOUT — PROFILE HEADER
+══════════════════════════════════════════════════ */
+#about{padding:52px 0 46px}
+.profile-row{
+  display:flex;gap:26px;align-items:flex-start;
+  margin-bottom:30px;
 }
-.edu-card::before {
-  content:''; position:absolute; top:0; left:0; right:0;
-  height:2px; background:var(--green);
+.avatar-wrap{
+  flex-shrink:0;width:106px;height:106px;border-radius:10px;
+  border:1px solid var(--border);overflow:hidden;
+  background:linear-gradient(135deg,var(--gbg),var(--bbg));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.8rem;
 }
-.edu-deg { font-family:var(--mono); font-size:.7rem; color:var(--green); font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
-.edu-school { font-size:1.05rem; font-weight:700; margin-bottom:2px; }
-.edu-major { font-size:.85rem; color:var(--txt2); margin-bottom:8px; }
-.edu-period { font-family:var(--mono); font-size:.73rem; color:var(--txt3); margin-bottom:12px; }
-.edu-gpa {
-  display:inline-flex; align-items:center; gap:5px;
-  background:var(--g-bg); border:1px solid var(--g-bd);
-  border-radius:4px; padding:3px 9px;
-  font-family:var(--mono); font-size:.73rem; color:var(--green); margin-bottom:12px;
+.avatar-wrap img{width:100%;height:100%;object-fit:cover}
+.profile-meta{}
+.profile-name{
+  font-size:1.7rem;font-weight:700;letter-spacing:-.04em;
+  line-height:1.1;margin-bottom:5px;
 }
-.edu-courses { font-size:.82rem; color:var(--txt2); line-height:1.7; }
-.edu-courses b { color:var(--txt); }
+.profile-name-zh{
+  font-size:1rem;font-weight:400;color:var(--txt2);margin-left:5px;
+}
+.profile-role{
+  font-family:var(--mono);font-size:.76rem;color:var(--txt2);
+  margin-bottom:10px;line-height:1.6;
+}
+.profile-affil{
+  font-size:.84rem;color:var(--txt2);line-height:1.75;
+  margin-bottom:11px;
+}
+.profile-affil a{
+  color:var(--blue);border-bottom:1px solid transparent;
+  transition:border-color .14s;
+}
+.profile-affil a:hover{border-bottom-color:var(--blue)}
+.plinks{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.plink{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--mono);font-size:.7rem;
+  padding:3px 9px;border-radius:4px;
+  border:1px solid var(--border);color:var(--txt2);
+  background:var(--bg2);transition:.13s;
+}
+.plink:hover{border-color:var(--border2);color:var(--txt)}
+.plink.gl:hover{border-color:var(--gbd);color:var(--green);background:var(--gbg)}
+.ptags{display:flex;flex-wrap:wrap;gap:5px}
 
-/* ================================================
-   SKILL GRID
-================================================ */
-.skill-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
-.skill-box {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--r); padding:18px;
+/* ══════════════════════════════════════════════════
+   ABOUT — BIO
+══════════════════════════════════════════════════ */
+.block-head{
+  font-family:var(--mono);font-size:.68rem;color:var(--txt3);
+  font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  display:flex;align-items:center;gap:9px;
+  margin-bottom:13px;margin-top:28px;
 }
-.skill-cat {
-  font-family:var(--mono); font-size:.7rem; color:var(--green);
-  font-weight:700; text-transform:uppercase; letter-spacing:.08em;
-  margin-bottom:12px;
+.block-head::after{content:'';flex:1;height:1px;background:var(--border)}
+.bio-p{
+  font-size:.875rem;color:var(--txt2);
+  line-height:1.83;margin-bottom:9px;
 }
-.stags { display:flex; flex-wrap:wrap; gap:6px; }
-.stag {
-  font-family:var(--mono); font-size:.73rem;
-  background:#f4f4f5; border:1px solid var(--border);
-  border-radius:4px; padding:2px 8px; color:var(--txt2);
-  cursor:default; transition:.15s;
+.bio-p.zh{font-size:.84rem;color:var(--txt3);margin-bottom:0}
+.bio-p.accent{
+  color:var(--green);font-style:italic;font-size:.83rem;
+  margin-top:10px;
 }
-.stag:hover { background:var(--g-bg); border-color:var(--g-bd); color:var(--green); }
+.bio-p strong{color:var(--txt);font-weight:600}
 
-/* ================================================
-   EXPAND CARDS
-================================================ */
-.xlist { display:flex; flex-direction:column; gap:10px; }
-.xcard {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--r); overflow:hidden; transition:border-color .2s;
+/* ══════════════════════════════════════════════════
+   ABOUT — EDUCATION TIMELINE
+══════════════════════════════════════════════════ */
+.edu-row{
+  display:flex;align-items:flex-start;gap:15px;
+  padding:14px 0;border-bottom:1px solid var(--border);
 }
-.xcard.open { border-color:var(--g-bd); }
-
-.xcard-btn {
-  width:100%; background:none; border:none; cursor:pointer;
-  padding:18px 20px; text-align:left;
-  display:grid; grid-template-columns:1fr auto;
-  gap:14px; align-items:start;
-  transition:background .15s;
+.edu-row:first-of-type{border-top:1px solid var(--border)}
+.edu-period{
+  font-family:var(--mono);font-size:.68rem;color:var(--txt3);
+  min-width:88px;flex-shrink:0;padding-top:3px;line-height:1.55;
 }
-.xcard-btn:hover { background:#fafaf7; }
-
-.xcard-title { font-size:.93rem; font-weight:600; margin-bottom:4px; line-height:1.4; text-align:left; }
-.xcard-brief { font-size:.79rem; color:var(--txt3); line-height:1.5; text-align:left; }
-
-.xcard-meta { display:flex; flex-direction:column; align-items:flex-end; gap:6px; flex-shrink:0; }
-.xcard-period { font-family:var(--mono); font-size:.7rem; color:var(--txt3); white-space:nowrap; }
-.xcard-badge {
-  font-size:.69rem; padding:2px 7px; border-radius:3px; font-weight:500;
-  background:var(--g-bg); color:var(--green); border:1px solid var(--g-bd);
-  white-space:nowrap;
+.edu-pip{
+  width:7px;height:7px;border-radius:50%;
+  border:1.5px solid var(--green);background:var(--bg);
+  margin-top:5px;flex-shrink:0;
 }
-.xcard-badge.gray { background:#f4f4f5; color:var(--txt2); border-color:var(--border); }
-.xcard-arr {
-  width:22px; height:22px; border-radius:4px;
-  border:1px solid var(--border); color:var(--txt3);
-  display:flex; align-items:center; justify-content:center;
-  font-size:.7rem; flex-shrink:0; margin-top:2px;
-  transition:transform .3s, border-color .2s, color .2s;
-}
-.xcard.open .xcard-arr { transform:rotate(180deg); border-color:var(--g-bd); color:var(--green); }
+.edu-body{}
+.edu-title{font-size:.88rem;font-weight:600;line-height:1.45;margin-bottom:3px}
+.edu-sub  {font-size:.82rem;color:var(--txt2);margin-bottom:3px}
+.edu-note {font-size:.78rem;color:var(--txt3);margin-bottom:6px;line-height:1.5}
+.edu-bds  {display:flex;flex-wrap:wrap;gap:5px}
 
-.xcard-body {
-  max-height:0; overflow:hidden;
-  transition:max-height .45s cubic-bezier(.4,0,.2,1);
+/* ══════════════════════════════════════════════════
+   AWARDS — inline compact list
+══════════════════════════════════════════════════ */
+.aw-list{display:flex;flex-direction:column;gap:0}
+.aw-row{
+  display:flex;gap:10px;align-items:baseline;
+  padding:8px 0;border-bottom:1px solid var(--border);
+  font-size:.84rem;color:var(--txt2);line-height:1.6;
 }
-.xcard-body.open { max-height:2400px; }
+.aw-row:first-child{border-top:1px solid var(--border)}
+.aw-dot{
+  width:5px;height:5px;border-radius:50%;background:var(--green);
+  margin-top:8px;flex-shrink:0;
+}
+.aw-row strong{color:var(--txt);font-weight:600}
 
-.xcard-inner {
-  padding:18px 20px 20px;
+/* ══════════════════════════════════════════════════
+   PAPERS — academic list
+══════════════════════════════════════════════════ */
+.pub-group-head{
+  font-family:var(--mono);font-size:.68rem;font-weight:700;
+  color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;
+  padding:14px 0 11px;
   border-top:1px solid var(--border);
+  margin-top:8px;
 }
-.xcard-desc { font-size:.86rem; color:var(--txt2); line-height:1.76; margin-bottom:14px; }
-.xtags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; }
-.xtag {
-  font-family:var(--mono); font-size:.71rem;
-  background:var(--g-bg); border:1px solid var(--g-bd);
-  border-radius:4px; padding:2px 8px; color:var(--green);
+.pub-group-head:first-of-type{border-top:none;margin-top:0;padding-top:0}
+.pub-item{
+  display:flex;gap:12px;
+  padding:14px 0;border-bottom:1px solid var(--border);
 }
-.xsub {
-  font-family:var(--mono); font-size:.69rem; font-weight:700;
-  color:var(--txt); text-transform:uppercase; letter-spacing:.08em;
-  margin-bottom:10px;
+.pub-num{
+  font-family:var(--mono);font-size:.76rem;color:var(--border2);
+  font-weight:700;min-width:22px;flex-shrink:0;padding-top:2px;
 }
-.xbullets { display:flex; flex-direction:column; gap:8px; }
-.xbullets li {
-  display:flex; gap:10px;
-  font-size:.84rem; color:var(--txt2); line-height:1.72;
+.pub-body{}
+.pub-title{
+  font-size:.875rem;font-weight:600;line-height:1.5;
+  color:var(--txt);margin-bottom:6px;
 }
-.xbullets li::before {
-  content:'›'; color:var(--green); font-weight:700;
-  font-size:1rem; flex-shrink:0; line-height:1.72;
+.pub-title a{transition:.14s}
+.pub-title a:hover{color:var(--green)}
+.pub-authors{
+  font-size:.82rem;color:var(--txt2);
+  line-height:1.65;margin-bottom:5px;
+}
+.pub-authors strong{
+  color:var(--txt);font-weight:600;
+  text-decoration:underline;text-underline-offset:2px;
+  text-decoration-color:var(--border2);
+}
+.pub-venue{
+  font-size:.82rem;color:var(--txt2);
+  font-style:italic;margin-bottom:8px;line-height:1.55;
+}
+.pub-venue b{font-style:normal;color:var(--txt);font-weight:600}
+.pub-bds{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.pub-links{display:flex;flex-wrap:wrap;gap:6px}
+.pub-link{
+  font-family:var(--mono);font-size:.68rem;
+  padding:2px 8px;border-radius:3px;
+  border:1px solid var(--border);color:var(--txt2);
+  background:var(--bg2);transition:.13s;
+}
+.pub-link:hover{border-color:var(--green);color:var(--green);background:var(--gbg)}
+.pub-note{
+  font-size:.77rem;color:var(--txt3);font-style:italic;
+  margin-top:8px;line-height:1.65;
+  padding-left:9px;border-left:2px solid var(--border);
 }
 
-/* project images */
-.ximg-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
-.ximg-item { display:flex; flex-direction:column; gap:5px; }
-.ximg {
-  border-radius:6px; border:1px solid var(--border);
-  max-width:240px; width:100%; object-fit:cover;
+/* ══════════════════════════════════════════════════
+   PROJECTS — expandable list
+══════════════════════════════════════════════════ */
+.proj-list{}
+.proj-entry{border-bottom:1px solid var(--border);overflow:hidden}
+.proj-entry:first-child{border-top:1px solid var(--border)}
+.proj-trigger{
+  width:100%;background:none;border:none;cursor:pointer;
+  padding:15px 0;text-align:left;
+  display:flex;gap:12px;align-items:flex-start;
+  transition:.13s;
 }
-.ximg-cap { font-family:var(--mono); font-size:.68rem; color:var(--txt3); }
+.proj-trigger:hover .proj-t-title{color:var(--green)}
+.proj-t-idx{
+  font-family:var(--mono);font-size:.7rem;color:var(--txt3);
+  min-width:22px;flex-shrink:0;padding-top:3px;
+}
+.proj-t-main{flex:1;min-width:0}
+.proj-t-title{
+  font-size:.88rem;font-weight:600;line-height:1.45;
+  color:var(--txt);transition:.13s;margin-bottom:3px;
+  text-align:left;
+}
+.proj-t-brief{
+  font-size:.78rem;color:var(--txt3);line-height:1.55;text-align:left;
+}
+.proj-t-side{
+  display:flex;flex-direction:column;align-items:flex-end;
+  gap:5px;flex-shrink:0;
+}
+.proj-t-period{font-family:var(--mono);font-size:.67rem;color:var(--txt3);white-space:nowrap}
+.proj-t-role{
+  font-size:.68rem;padding:2px 7px;border-radius:3px;
+  white-space:nowrap;
+}
+.proj-t-arr{
+  font-family:var(--mono);font-size:.65rem;color:var(--txt3);
+  transition:transform .3s;line-height:1;
+}
+.proj-entry.open .proj-t-arr{transform:rotate(180deg)}
 
-/* ================================================
-   PUBLICATIONS
-================================================ */
-.pub-list { display:flex; flex-direction:column; gap:11px; }
-.pub-card {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--r); padding:18px 20px;
-  display:flex; gap:16px; transition:border-color .2s;
+.proj-collapse{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.4,0,.2,1);
 }
-.pub-card:hover { border-color:var(--border2); }
-.pub-n {
-  font-family:var(--mono); font-size:1.15rem; font-weight:700;
-  color:var(--border2); min-width:22px; flex-shrink:0; line-height:1.1;
+.proj-collapse.open{max-height:2400px}
+.proj-content{
+  padding:0 0 22px 34px;
 }
-.pub-title { font-size:.86rem; font-weight:600; line-height:1.55; margin-bottom:10px; }
-.pub-badges { display:flex; flex-wrap:wrap; gap:5px; }
-.pb { font-family:var(--mono); font-size:.68rem; padding:2px 6px; border-radius:3px; }
-.pb-1st  { background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe; }
-.pb-2nd  { background:#faf5ff; color:#7c3aed; border:1px solid #ddd6fe; }
-.pb-vn   { background:#f4f4f5; color:var(--txt2); border:1px solid var(--border); }
-.pb-q1   { background:#fefce8; color:#ca8a04; border:1px solid #fef08a; }
-.pb-top  { background:#fff7ed; color:#c2410c; border:1px solid #fed7aa; }
-.pb-ccfa { background:#fef2f2; color:#dc2626; border:1px solid #fecaca; }
-.pb-rev  { background:var(--g-bg); color:var(--green); border:1px solid var(--g-bd); }
+.proj-en{font-size:.85rem;color:var(--txt2);line-height:1.82;margin-bottom:7px}
+.proj-zh{font-size:.82rem;color:var(--txt3);line-height:1.78;margin-bottom:14px}
+.proj-stacks{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.proj-stack{
+  font-family:var(--mono);font-size:.69rem;
+  padding:2px 7px;border-radius:3px;
+  background:var(--bbg);color:var(--blue);border:1px solid var(--bbd);
+}
+.contrib-title{
+  font-family:var(--mono);font-size:.67rem;font-weight:700;
+  color:var(--txt);letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:9px;
+}
+.contrib-items{display:flex;flex-direction:column;gap:7px}
+.contrib-row{
+  display:grid;grid-template-columns:6px 1fr;gap:11px;
+  font-size:.83rem;color:var(--txt2);line-height:1.75;
+}
+.contrib-pip{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--green);margin-top:9px;
+}
+.proj-imgs{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.proj-img-box{display:flex;flex-direction:column;gap:4px}
+.proj-img{
+  border-radius:5px;border:1px solid var(--border);
+  max-width:210px;width:100%;
+}
+.proj-img-cap{font-family:var(--mono);font-size:.63rem;color:var(--txt3)}
 
-/* grants */
-.grant-head {
-  font-family:var(--mono); font-size:.73rem; color:var(--txt2);
-  font-weight:600; margin:30px 0 12px;
+/* ══════════════════════════════════════════════════
+   FUNDED RESEARCH
+══════════════════════════════════════════════════ */
+.fund-list{}
+.fund-item{
+  display:flex;gap:12px;
+  padding:15px 0;border-bottom:1px solid var(--border);
 }
-.glist { display:flex; flex-direction:column; gap:9px; }
-.gitem {
-  display:flex; gap:11px;
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:6px; padding:13px 15px;
-  font-size:.83rem; color:var(--txt2); line-height:1.65;
-  transition:border-color .2s;
+.fund-item:first-child{border-top:1px solid var(--border)}
+.fund-n{
+  font-family:var(--mono);font-size:.76rem;color:var(--border2);
+  font-weight:700;min-width:22px;flex-shrink:0;padding-top:2px;
 }
-.gitem:hover { border-color:var(--border2); }
-.gdot { width:5px; height:5px; background:var(--green); border-radius:50%; margin-top:9px; flex-shrink:0; }
-.gitem strong { color:var(--txt); }
+.fund-body{}
+.fund-en{font-size:.875rem;font-weight:600;line-height:1.5;margin-bottom:5px}
+.fund-zh{font-size:.84rem;color:var(--txt2);margin-bottom:9px;line-height:1.55}
+.fund-meta{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.fund-code{font-family:var(--mono);font-size:.67rem;color:var(--txt3)}
 
-/* ================================================
-   AWARDS
-================================================ */
-.aw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:10px; }
-.aw-item {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--r); padding:13px 16px;
-  display:flex; gap:11px; align-items:flex-start;
-  font-size:.83rem; color:var(--txt2); line-height:1.55;
-  transition:border-color .2s;
-}
-.aw-item:hover { border-color:var(--border2); }
-.aw-icon { font-size:1.1rem; flex-shrink:0; }
-.aw-item strong { color:var(--txt); }
-
-/* ================================================
-   CONTACT
-================================================ */
-.con-row { display:flex; flex-wrap:wrap; gap:11px; }
-.citem {
-  display:flex; gap:12px; align-items:center;
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--r); padding:15px 18px;
-  flex:1; min-width:175px;
-  transition:border-color .2s, transform .15s;
-}
-.citem:hover { border-color:var(--g-bd); transform:translateY(-1px); }
-.cicon { font-size:1.25rem; flex-shrink:0; }
-.clabel { font-family:var(--mono); font-size:.68rem; color:var(--txt3); margin-bottom:3px; }
-.cval { font-size:.85rem; font-weight:500; }
-
-/* ================================================
+/* ══════════════════════════════════════════════════
    FOOTER
-================================================ */
-footer {
-  background:var(--surface); border-top:1px solid var(--border);
-  padding:22px var(--px); text-align:center;
+══════════════════════════════════════════════════ */
+footer{
+  border-top:1px solid var(--border);
+  padding:26px var(--px);
+  background:var(--bg2);
 }
-.foot-txt { font-family:var(--mono); font-size:.73rem; color:var(--txt3); line-height:1.9; }
-.foot-txt a { color:var(--green); }
+.foot-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.foot-name{font-size:.88rem;font-weight:600;color:var(--txt)}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.foot-links a{
+  font-family:var(--mono);font-size:.7rem;
+  color:var(--blue);transition:.13s;
+}
+.foot-links a:hover{color:var(--green)}
+.foot-copy{font-family:var(--mono);font-size:.64rem;color:var(--txt3);text-align:center}
 
-/* ================================================
+/* ══════════════════════════════════════════════════
    RESPONSIVE
-================================================ */
-@media (max-width:640px) {
-  :root { --px:16px; }
-  #hero { padding:50px 0 38px; }
-  .nav-ul {
-    display:none; flex-direction:column;
-    position:absolute; top:54px; left:0; right:0;
-    background:rgba(247,247,244,.97); backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border); padding:8px 0; z-index:98;
+══════════════════════════════════════════════════ */
+@media(max-width:620px){
+  :root{--px:16px}
+  #about{padding:36px 0 32px}
+  .sec{padding:36px 0}
+  .profile-row{flex-direction:column;gap:16px}
+  .avatar-wrap{width:78px;height:78px;font-size:2.1rem}
+  .profile-name{font-size:1.38rem}
+  .nav-menu{
+    display:none;flex-direction:column;
+    position:absolute;top:50px;left:0;right:0;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid var(--border);
+    padding:6px 0;z-index:99;
   }
-  .nav-ul.open { display:flex; }
-  .nav-ul a { border-radius:0; padding:10px 20px; }
-  .nav-ham { display:flex; }
-  .xcard-btn { grid-template-columns:1fr; }
-  .xcard-meta { flex-direction:row; flex-wrap:wrap; align-items:center; gap:7px; }
-  .pub-card { flex-direction:column; gap:5px; }
-  .hero-stats { gap:18px; }
-  .sec { padding:46px 0; }
+  .nav-menu.open{display:flex}
+  .nav-menu a{border-radius:0;padding:11px 20px;font-size:.84rem}
+  .hamburger{display:flex}
+  .pub-item{flex-direction:column;gap:4px}
+  .proj-trigger{flex-wrap:wrap}
+  .proj-t-side{flex-direction:row;align-items:center;flex-wrap:wrap;gap:7px;margin-left:34px}
+  .fund-item{flex-direction:column;gap:5px}
+  .edu-row{gap:10px}
+  .edu-period{min-width:76px;font-size:.65rem}
+}
+@media(max-width:420px){
+  :root{--px:14px}
+  .plinks{gap:5px}
 }
 </style>
 </head>
@@ -394,187 +463,356 @@ footer {
 <!-- ══════════ NAV ══════════ -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">~/resume<span class="nav-cursor"></span></a>
-    <ul class="nav-ul" id="navMenu">
-      <li><a href="#education">教育</a></li>
-      <li><a href="#skills">技能</a></li>
-      <li><a href="#projects">项目</a></li>
-      <li><a href="#internship">实习</a></li>
-      <li><a href="#publications">论文</a></li>
-      <li><a href="#awards">荣誉</a></li>
-      <li><a href="#contact">联系</a></li>
-    </ul>
-    <button class="nav-ham" id="navHam" aria-label="menu">
+    <div class="nav-brand">
+      YOUR NAME
+      <span class="nav-brand-sub">/ homepage</span>
+    </div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#about">About</a>
+      <a href="#papers">Papers</a>
+      <a href="#projects">Projects</a>
+      <a href="#funded">Research</a>
+    </nav>
+    <button class="hamburger" id="burger" aria-label="menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- ══════════ HERO ══════════ -->
-<section id="hero">
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about">
   <div class="wrap">
-    <div class="hero-eyebrow">AI Algorithm Researcher · Fujian Normal University</div>
-    <!-- ↓ 替换为你的姓名 -->
-    <h1 class="hero-name">Fengyan Lin</h1>
-    <p class="hero-role">AI Agent &nbsp;/&nbsp; Computer Vision &nbsp;/&nbsp; LLM</p>
-    <p class="hero-bio">
-   目前就读于福建师范大学网络安全专业，攻读计算机视觉、深度学习和大型视觉语言模型方向的研究生学位。
-   同时关注人工智能的工程实现和创新应用。
-   Currently a postgraduate student in Cybersecurity at Fujian Normal University, specializing in computer vision, deep learning, and large visual language models. 
-   Also focusing on the engineering implementation and innovative applications of AI.
+
+    <!-- Profile Header -->
+    <div class="profile-row">
+      <div class="avatar-wrap">
+        <!-- Replace: <img src="avatar.jpg" alt="YOUR NAME"> -->
+        🧑‍💻
+      </div>
+      <div class="profile-meta">
+        <div class="profile-name">
+          Fengyan Lin
+          <span class="profile-name-zh"></span>
+        </div>
+        <div class="profile-role">
+          AI Algorithm Engineer · Graduate Researcher in Cybersecurity<br>
+          AI 算法工程师 · 网络信息安全研究生在读
+        </div>
+        <div class="profile-affil">
+          School of Computer and Big Data,
+          <a href="https://www.fzu.edu.cn" target="_blank">Fujian Normal University</a>
+          &nbsp;·&nbsp; Fuzhou, Fujian, China<br>
+          <small style="color:var(--txt3)">福建师范大学，福建·福州</small>
+          <br>
+          <small>
+            Fuzhou Lianhe Xiaozhi Information Technology Co., Ltd.
+            &nbsp;·&nbsp; <span style="color:var(--txt3)">福州联合晓智信息技术有限公司</span>
+          </small>
+        </div>
+        <div class="plinks">
+          <a class="plink gl" href="#" id="emailBtn" onclick="showEmail(event)">
+            ✉&ensp;Email
+          </a>
+          <a class="plink" href="https://github.com/mlxger" target="_blank" rel="noopener">
+            ⌥&ensp;GitHub
+          </a>
+          <!-- Uncomment as needed:
+          <a class="plink" href="#"><span>◎</span>&ensp;Google Scholar</a>
+          <a class="plink" href="#"><span>◈</span>&ensp;ORCID</a>
+          -->
+        </div>
+        <div class="ptags">
+          <span class="bd bd-g">🤖 AI Agent</span>
+          <span class="bd bd-g">👁 Computer Vision</span>
+          <span class="bd bd-g">🧠 LLM · RAG</span>
+          <span class="bd bd-n">IEEE Student Member</span>
+          <span class="bd bd-n">CCF Student Member</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Me -->
+    <div class="block-head">About Me · 关于我</div>
+    <p class="bio-p">
+      I am currently a master's student in Cybersecurity at <strong>Fujian Normal University</strong>, with a GPA of 3.65/4.0,
+      ranking <strong>1st out of 27</strong> in my program. I am simultaneously working as an <strong>AI Algorithm Engineer</strong>
+      at Fuzhou Lianhe Xiaozhi Information Technology Co., Ltd., focused on AI engineering and applied innovation.
     </p>
-    <div class="hero-chips">
-      <span class="chip">🤖 AI Agent</span>
-      <span class="chip">👁️ Computer Vision</span>
-      <span class="chip">🧠 LLM / RAG</span>
-      <span class="chip">⚡ PyTorch</span>
-      <span class="chip n">IEEE Student Member</span>
-      <span class="chip n">GPA 3.65/4.0</span>
+    <p class="bio-p zh">
+      现就读于福建大学网络信息安全专业，GPA 3.65/4.0，<strong>专业排名第 1/27</strong>，同时担任福州联合晓智信息技术有限公司 AI 算法工程师，专注于 AI 工程化落地与创新应用开发。
+    </p>
+    <p class="bio-p" style="margin-top:10px">
+      My research interests lie in <strong>Computer Vision</strong>, <strong>Deep Learning</strong>, and
+      <strong>Visual Large Language Models</strong>, with a focus on Action Quality Assessment (AQA) and
+      multimodal emotion recognition. I also have extensive engineering experience in LLM-based intelligent agents,
+      RAG pipelines, and AI automation workflows.
+    </p>
+    <p class="bio-p zh">
+      研究兴趣涵盖计算机视觉、深度学习与视觉大语言模型，专注于动作质量评估（AQA）与多模态情感识别。在大语言模型智能体系统、RAG 检索增强与 AI 自动化工作流方面亦积累了丰富的工程实践经验。
+    </p>
+    <p class="bio-p accent">
+      I always strive to bridge academic research and real-world engineering —
+      from publishing in top venues to deploying production-ready AI systems.
+      · 致力于将学术研究与工程落地相结合，从顶会论文到商业化部署，探索 AI 的边界。
+    </p>
+
+    <!-- Education -->
+    <div class="block-head">Education · 教育背景</div>
+    <div class="edu-row">
+      <div class="edu-period">2024.09 —<br>2027.06<br><span style="color:var(--green);font-size:.62rem">In Progress</span></div>
+      <div class="edu-pip"></div>
+      <div class="edu-body">
+        <div class="edu-title">M.Eng. in Cybersecurity · 工学硕士，网络信息安全</div>
+        <div class="edu-sub">Fujian Normal University · 福建师范大学</div>
+        <div class="edu-note">
+          Research: Action Quality Assessment、Pose Estimation、Computer Vision, Vision-Language Models<br>
+          研究方向：动作评估、姿态估计、计算机视觉、视觉大语言模型
+        </div>
+        <div class="edu-bds">
+          <span class="bd bd-g">GPA 3.65 / 4.0</span>
+          <span class="bd bd-g">专业排名 1 / 27</span>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div><div class="hstat-n">4+</div><div class="hstat-l">学术论文(Academic papers)</div></div>
-      <div><div class="hstat-n">5+</div><div class="hstat-l">主导项目(Project)</div></div>
-      <div><div class="hstat-n">3+</div><div class="hstat-l">科研课题(Research)</div></div>
+    <div class="edu-row">
+      <div class="edu-period">2020.09 —<br>2024.04</div>
+      <div class="edu-pip"></div>
+      <div class="edu-body">
+        <div class="edu-title">B.Eng. in Computer Science · 工学学士，计算机科学与技术</div>
+        <div class="edu-sub">Fujian Normal University · 福建师范大学</div>
+        <div class="edu-note">
+          Rank 25 / 138 (Top 20%) · Outstanding Graduate<br>
+          专业排名 25/138（前 20%）· 优秀毕业生
+        </div>
+        <div class="edu-bds">
+          <span class="bd bd-b">Top 20%</span>
+          <span class="bd bd-n">优秀毕业生</span>
+        </div>
+      </div>
     </div>
+
+    <!-- Awards -->
+    <div class="block-head">Honors &amp; Awards · 获奖荣誉</div>
+    <div class="aw-list">
+      <div class="aw-row">
+        <div class="aw-dot"></div>
+        <div><strong>First Prize (Fujian Region)</strong> — 25th National Undergraduate Mathematical Modeling Competition (CUMCM) · 第二十五届全国大学生数学建模竞赛福建赛区一等奖</div>
+      </div>
+      <div class="aw-row">
+        <div class="aw-dot"></div>
+        <div><strong>National Third Prize</strong> — 21st China Graduate Mathematical Modeling Contest (Huawei Cup) · 华为杯第二十一届中国研究生数学建模竞赛国家三等奖</div>
+      </div>
+      <div class="aw-row">
+        <div class="aw-dot"></div>
+        <div><strong>Provincial Third Prize</strong> — 25th &amp; 26th China Robot and AI Competition (Fujian) · 第二十五、二十六届中国机器人及人工智能大赛福建省三等奖</div>
+      </div>
+      <div class="aw-row">
+        <div class="aw-dot"></div>
+        <div>Graduate <strong>First-Class Excellence Scholarship</strong> · 研究生优秀学生一等奖学金</div>
+      </div>
+      <div class="aw-row">
+        <div class="aw-dot"></div>
+        <div>Undergraduate <strong>Second &amp; Third-Class Excellence Scholarships</strong> (×4) · 本科期间多次获优秀学生奖学金</div>
+      </div>
+      <div class="aw-row">
+        <div class="aw-dot"></div>
+        <div><strong>Outstanding Graduate</strong>, Outstanding Communist Youth League Member, Three-Good Student · 优秀毕业生、优秀共青团员、校三好学生</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ══════════ EDUCATION ══════════ -->
-<section class="sec alt" id="education">
+<!-- ══════════ PAPERS ══════════ -->
+<section class="sec" id="papers">
   <div class="wrap">
-    <div class="sec-kicker">EDUCATION</div>
-    <h2 class="sec-title">教育背景</h2>
-    <div class="sec-bar"></div>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-deg">硕士研究生 · 在读 (Master's student · Currently enrolled)</div>
-        <div class="edu-school">Fujian Noraml University</div>
-        <div class="edu-major">Network Information and Security</div>
-        <div class="edu-period">📅 2024.09 — 2027.06</div>
-        <div class="edu-gpa">🏆 GPA 3.65 / 4.0 &nbsp;|&nbsp;</div>
-        <div class="edu-courses">
-          <b>主修：</b>机器学习、深度学习、算法设计与分析、网络安全技术<br>
-          <b>研究方向：</b>计算机视觉，深度学习，视觉大语言模型
-        </div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-deg">本科 · 已毕业(Undergraduate degree · Graduated)</div>
-        <div class="edu-school">Fujian Noraml University</div>
-        <div class="edu-major">计算机科学与技术 Computer Science and Technology</div>
-        <div class="edu-period">📅 2020.09 — 2024.04</div>
-        <div class="edu-courses">
-          <b>主修：</b>Python 程序设计、数据结构与算法、数据库概论、数据挖掘与分析、操作系统
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="sec-label">Publications</div>
+    <div class="sec-title">学术论文 <span>· Academic Papers</span></div>
 
-<!-- ══════════ SKILLS ══════════ -->
-<section class="sec" id="skills">
-  <div class="wrap">
-    <div class="sec-kicker">TECH STACK</div>
-    <h2 class="sec-title">技术栈</h2>
-    <div class="sec-bar"></div>
-    <div class="skill-grid">
-      <div class="skill-box">
-        <div class="skill-cat">深度学习框架</div>
-        <div class="stags">
-          <span class="stag">PyTorch</span><span class="stag">CNN</span>
-          <span class="stag">GCN</span><span class="stag">Transformer</span>
-          <span class="stag">Attention</span><span class="stag">3D Conv</span>
+    <!-- JOURNAL -->
+    <div class="pub-group-head">Journal Papers · 期刊论文</div>
+
+    <!-- J1 -->
+    <div class="pub-item">
+      <div class="pub-num">J1</div>
+      <div class="pub-body">
+        <div class="pub-title">
+          Enhancing Long-Term Action Quality Assessment: A Dual-Modality Dataset and Causal Cross-Modal Framework for Trampoline Gymnastics
         </div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-cat">前沿方法</div>
-        <div class="stags">
-          <span class="stag">CLIP</span><span class="stag">Contrastive Learning</span>
-          <span class="stag">Semi-supervised</span>
-          <span class="stag">时空序列分析</span><span class="stag">多模态融合</span>
+        <div class="pub-authors">
+          <strong>YOUR NAME</strong>, [Co-authors]
         </div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-cat">LLM &amp; 智能体</div>
-        <div class="stags">
-          <span class="stag">RAG</span><span class="stag">Dify</span>
-          <span class="stag">Ollama</span><span class="stag">Prompt 工程</span>
-          <span class="stag">Workflow</span><span class="stag">LLM 微调</span>
+        <div class="pub-venue">
+          <b>Sensors</b>, MDPI, 2024
         </div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-cat">数据库 &amp; 检索</div>
-        <div class="stags">
-          <span class="stag">Milvus</span><span class="stag">ChromaDB</span>
-          <span class="stag">向量检索</span><span class="stag">LightGBM</span>
+        <div class="pub-bds">
+          <span class="bd bd-b">第一作者 · First Author</span>
+          <span class="bd bd-n">中科院三区 · CAS Zone 3</span>
+          <span class="bd bd-n">SCIE · Q2</span>
         </div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-cat">工程与工具</div>
-        <div class="stags">
-          <span class="stag">Python</span><span class="stag">影刀 RPA</span>
-          <span class="stag">DTW</span><span class="stag">OpenCV</span>
-          <span class="stag">全栈开发</span>
-        </div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-cat">科研 &amp; 软技能</div>
-        <div class="stags">
-          <span class="stag">专利撰写</span><span class="stag">项目申报</span>
-          <span class="stag">软著申请</span><span class="stag">IEEE Member</span>
-          <span class="stag">团队协作</span>
+        <div class="pub-links">
+          <a class="pub-link" href="#">[Paper]</a>
+          <a class="pub-link" href="#">[Code]</a>
+          <a class="pub-link" href="#">[Dataset]</a>
         </div>
       </div>
     </div>
+
+    <!-- J2 -->
+    <div class="pub-item">
+      <div class="pub-num">J2</div>
+      <div class="pub-body">
+        <div class="pub-title">
+          Enhancing Long-Term Action Quality Assessment with Hypergraph Transformer Network
+        </div>
+        <div class="pub-authors">
+          <strong>YOUR NAME</strong>, [Co-authors]
+        </div>
+        <div class="pub-venue">
+          <b>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</b>, Under Review
+        </div>
+        <div class="pub-bds">
+          <span class="bd bd-b">第一作者 · First Author</span>
+          <span class="bd bd-r">中科院一区 TOP · CAS Q1 TOP</span>
+          <span class="bd bd-a">在审 · Under Review</span>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="#">[Preprint]</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFERENCE -->
+    <div class="pub-group-head">Conference Papers · 会议论文</div>
+
+    <!-- C1 -->
+    <div class="pub-item">
+      <div class="pub-num">C1</div>
+      <div class="pub-body">
+        <div class="pub-title">
+          Nano-EmoX: Unifying Multimodal Emotional Intelligence from Perception to Empathy
+        </div>
+        <div class="pub-authors">
+          [First Author], <strong>YOUR NAME</strong>, [Co-authors]
+        </div>
+        <div class="pub-venue">
+          <b>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</b>, 2025, Nashville, USA
+        </div>
+        <div class="pub-bds">
+          <span class="bd bd-p">第二作者 · Second Author</span>
+          <span class="bd bd-r">CCF A · 清华 A</span>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="#">[Paper]</a>
+          <a class="pub-link" href="#">[Code]</a>
+          <a class="pub-link" href="#">[Poster]</a>
+        </div>
+        <div class="pub-note">
+          Focus: Multimodal emotion recognition spanning perception, understanding, and empathy dimensions using large vision-language models.
+          · 基于大视觉语言模型的多模态情感智能研究，涵盖情感感知、理解与共情三个维度。
+        </div>
+      </div>
+    </div>
+
+    <!-- C2 -->
+    <div class="pub-item">
+      <div class="pub-num">C2</div>
+      <div class="pub-body">
+        <div class="pub-title">
+          TaiChi-AQA: A Dataset and Framework for Action Quality Assessment and Visual Analysis
+        </div>
+        <div class="pub-authors">
+          [First Author], <strong>YOUR NAME</strong>, [Co-authors]
+        </div>
+        <div class="pub-venue">
+          <b>IET Computer Vision</b>, 2024
+        </div>
+        <div class="pub-bds">
+          <span class="bd bd-p">第二作者 · Second Author</span>
+          <span class="bd bd-n">CCF C</span>
+          <span class="bd bd-n">SCIE</span>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="#">[Paper]</a>
+          <a class="pub-link" href="#">[Dataset]</a>
+          <a class="pub-link" href="#">[Code]</a>
+        </div>
+        <div class="pub-note">
+          Introduces the first large-scale Tai Chi action quality assessment dataset along with a baseline evaluation framework.
+          · 首个大规模太极拳动作质量评估数据集及基线评估框架。
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- ══════════ PROJECTS ══════════ -->
-<section class="sec alt" id="projects">
+<section class="sec" id="projects">
   <div class="wrap">
-    <div class="sec-kicker">PROJECTS</div>
-    <h2 class="sec-title">项目经历</h2>
-    <div class="sec-bar"></div>
-    <div class="xlist">
+    <div class="sec-label">Projects</div>
+    <div class="sec-title">项目经历 <span>· Research &amp; Engineering Projects</span></div>
+
+    <div class="proj-list">
 
       <!-- P1 -->
-      <div class="xcard" id="p1">
-        <button class="xcard-btn" onclick="toggleX('p1')" aria-expanded="false">
-          <div>
-            <div class="xcard-title">🃏 球员交易卡识别与分割</div>
-            <div class="xcard-brief">搭建球员交易卡图像 AI 识别与信息字段分类平台，构建端到端全栈 AI 处理流程，已完成商业化部署</div>
+      <div class="proj-entry" id="p1">
+        <button class="proj-trigger" onclick="toggleProj('p1')">
+          <div class="proj-t-idx">01</div>
+          <div class="proj-t-main">
+            <div class="proj-t-title">Player Trading Card Recognition &amp; Segmentation · 球员交易卡识别与分割</div>
+            <div class="proj-t-brief">
+              AI-powered recognition pipeline for player trading cards at million-image scale · 百万级图像秒级检索与非结构化信息结构化提取，已商业化部署
+            </div>
           </div>
-          <div class="xcard-meta">
-            <span class="xcard-period">2025.07 — 2026.03</span>
-            <span class="xcard-badge">主要负责人</span>
-            <span class="xcard-arr">▾</span>
+          <div class="proj-t-side">
+            <span class="proj-t-period">2025.07 — 2026.03</span>
+            <span class="proj-t-role bd bd-g">Lead Engineer · 主要负责人</span>
+            <span class="proj-t-arr">▾</span>
           </div>
         </button>
-        <div class="xcard-body" id="p1-b">
-          <div class="xcard-inner">
-            <p class="xcard-desc">
-              搭建球员交易卡图像 AI 识别与信息字段分类平台，解决海量非结构化球星卡图像自动化处理、精准检索与结构化提取难题，
-              构建端到端全栈 AI 处理流程。该系统已完成商业化部署，正处于上线审核阶段。
+        <div class="proj-collapse" id="p1-col">
+          <div class="proj-content">
+            <p class="proj-en">
+              Built an AI-powered recognition and classification platform for player trading card images, solving challenges of automated processing,
+              precise retrieval, and structured extraction of unstructured card images at scale.
+              The system has been commercially deployed and is pending final release review.
             </p>
-            <div class="xtags">
-              <span class="xtag">多模态大模型</span><span class="xtag">Milvus</span>
-              <span class="xtag">LightGBM</span><span class="xtag">ChromaDB</span>
-              <span class="xtag">RAG</span><span class="xtag">Ollama</span>
+            <p class="proj-zh">
+              搭建球员交易卡图像 AI 识别与信息字段分类平台，解决海量非结构化球星卡图像自动化处理、精准检索与结构化提取难题，构建端到端全栈 AI 处理流程，已完成商业化部署，正处于上线审核阶段。
+            </p>
+            <div class="proj-stacks">
+              <span class="proj-stack">Milvus</span>
+              <span class="proj-stack">LightGBM</span>
+              <span class="proj-stack">ChromaDB</span>
+              <span class="proj-stack">RAG</span>
+              <span class="proj-stack">Ollama</span>
+              <span class="proj-stack">Multimodal LLM</span>
+              <span class="proj-stack">Vector Search</span>
             </div>
-            <div class="xsub">// 核心贡献</div>
-            <ul class="xbullets">
-              <li>主导全流程技术选型，联合企业方确定 LightGBM + Milvus 向量数据库架构，搭建高鲁棒性卡片识别 Pipeline，保障复杂背景下稳定识别。</li>
-              <li>创新融合向量特征与传统视觉特征，利用 LightGBM 进行多特征融合与重排序，显著提升单特征不足场景下的识别精度以及相似卡片细粒度区分能力。</li>
-              <li>基于 Ollama 本地部署多模态大模型，结合 ChromaDB 构建 RAG 检索增强体系，完成限量编、卡号、出版商等多维度卡面信息结构化提取。</li>
-            </ul>
-            <!-- 将 pic1.png / pic2.png 放在同目录下即可显示 -->
-            <div class="ximg-row">
-              <div class="ximg-item">
-                <img src="pic1.png" alt="系统架构" class="ximg" onerror="this.closest('.ximg-item').style.display='none'">
-                <span class="ximg-cap">// system architecture</span>
+            <div class="contrib-title">Key Contributions · 核心贡献</div>
+            <div class="contrib-items">
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Led full-process technical architecture selection; adopted <strong>LightGBM + Milvus</strong> vector database pipeline ensuring robust recognition under complex backgrounds. · 主导全流程技术选型，联合企业确定 LightGBM + Milvus 向量数据库架构，保障复杂背景下稳定识别。</div>
               </div>
-              <div class="ximg-item">
-                <img src="pic2.png" alt="识别结果" class="ximg" onerror="this.closest('.ximg-item').style.display='none'">
-                <span class="ximg-cap">// recognition result</span>
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Innovatively fused vector features with traditional visual features via LightGBM for multi-feature fusion and re-ranking, significantly improving fine-grained discrimination between similar cards. · 创新融合向量与传统视觉特征，利用 LightGBM 多特征融合与重排序，显著提升相似卡片细粒度区分能力。</div>
+              </div>
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Deployed multimodal LLM locally via <strong>Ollama</strong>; combined with <strong>ChromaDB</strong> to build a RAG retrieval-augmented system for structured extraction of edition numbers, card IDs, and publisher fields. · 基于 Ollama 本地部署多模态大模型，结合 ChromaDB 构建 RAG 体系，完成限量编、卡号、出版商等多维度信息结构化提取。</div>
+              </div>
+            </div>
+            <div class="proj-imgs">
+              <div class="proj-img-box">
+                <img src="pic1.png" class="proj-img" alt="System Architecture" onerror="this.closest('.proj-img-box').style.display='none'">
+                <span class="proj-img-cap">// system architecture</span>
+              </div>
+              <div class="proj-img-box">
+                <img src="pic2.png" class="proj-img" alt="Recognition Results" onerror="this.closest('.proj-img-box').style.display='none'">
+                <span class="proj-img-cap">// recognition results</span>
               </div>
             </div>
           </div>
@@ -582,43 +820,56 @@ footer {
       </div>
 
       <!-- P2 -->
-      <div class="xcard" id="p2">
-        <button class="xcard-btn" onclick="toggleX('p2')" aria-expanded="false">
-          <div>
-            <div class="xcard-title">🏃 校园智慧体育云平台</div>
-            <div class="xcard-brief">AI 人体姿态识别 + DTW 时序建模，实现太极拳、八段锦智能评分，准确率 95%+</div>
+      <div class="proj-entry" id="p2">
+        <button class="proj-trigger" onclick="toggleProj('p2')">
+          <div class="proj-t-idx">02</div>
+          <div class="proj-t-main">
+            <div class="proj-t-title">Campus Smart Sports Cloud Platform · 校园智慧体育云平台</div>
+            <div class="proj-t-brief">
+              AI pose estimation + DTW temporal modeling for automated Tai Chi &amp; Baduanjin scoring · 动作评估准确率 95%+，替代人工评判
+            </div>
           </div>
-          <div class="xcard-meta">
-            <span class="xcard-period">2024.11 — 2025.08</span>
-            <span class="xcard-badge">主要负责人</span>
-            <span class="xcard-arr">▾</span>
+          <div class="proj-t-side">
+            <span class="proj-t-period">2024.11 — 2025.08</span>
+            <span class="proj-t-role bd bd-g">Lead Engineer · 主要负责人</span>
+            <span class="proj-t-arr">▾</span>
           </div>
         </button>
-        <div class="xcard-body" id="p2-b">
-          <div class="xcard-inner">
-            <p class="xcard-desc">
-              面向校园体育教学与考核场景，依托 AI 人体姿态识别、大数据分析技术搭建智慧体育云平台，
-              解决传统体育考核人工评分效率低、标准不统一、数据难量化等痛点，
-              实现太极拳、八段锦等课程 AI 自动判分、无纸化考核和数据可视化管理。
+        <div class="proj-collapse" id="p2-col">
+          <div class="proj-content">
+            <p class="proj-en">
+              Designed and developed an intelligent sports assessment cloud platform for campus physical education.
+              Leverages AI human pose estimation and big data analytics to automate scoring of Tai Chi, Baduanjin,
+              and other courses — replacing manual, subjective assessment with objective AI-driven evaluation.
             </p>
-            <div class="xtags">
-              <span class="xtag">人体姿态估计</span><span class="xtag">DTW 动态时间规整</span>
-              <span class="xtag">图像处理</span><span class="xtag">视频时序分析</span>
+            <p class="proj-zh">
+              面向校园体育教学与考核场景，依托 AI 人体姿态识别、大数据分析技术搭建智慧体育云平台，实现太极拳、八段锦等课程 AI 自动判分、无纸化考核和数据可视化管理，解决传统体育考核人工评分效率低、标准不统一等痛点。
+            </p>
+            <div class="proj-stacks">
+              <span class="proj-stack">Pose Estimation</span>
+              <span class="proj-stack">DTW Dynamic Time Warping</span>
+              <span class="proj-stack">Video Processing</span>
+              <span class="proj-stack">Temporal Sequence Analysis</span>
             </div>
-            <div class="xsub">// 核心贡献</div>
-            <ul class="xbullets">
-              <li>负责太极拳、八段锦动作识别与智能评估模块开发，基于人体姿态识别算法提取 21 个核心骨骼关键点，完成视频帧预处理与动作特征抽取。</li>
-              <li>构建 DTW 动态时间规整模型，实现学生动作序列与标准动作相似度匹配，优化动作判分逻辑，将评估准确率提升至 95%+。</li>
-              <li>完成体育动作 AI 评分全流程开发，支持视频解析、时序建模、自动打分，替代人工评判。</li>
-            </ul>
-            <div class="ximg-row">
-              <div class="ximg-item">
-                <img src="pic3.png" alt="姿态识别" class="ximg" onerror="this.closest('.ximg-item').style.display='none'">
-                <span class="ximg-cap">// pose estimation</span>
+            <div class="contrib-title">Key Contributions · 核心贡献</div>
+            <div class="contrib-items">
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Developed action recognition and intelligent assessment module for Tai Chi and Baduanjin; extracted <strong>21 core skeletal keypoints</strong> from pose estimation algorithm for action feature extraction. · 负责太极拳、八段锦动作识别与智能评估模块，基于人体姿态识别提取 21 个核心骨骼关键点，完成视频帧预处理与动作特征抽取。</div>
               </div>
-              <div class="ximg-item">
-                <img src="pic4.png" alt="评分系统" class="ximg" onerror="this.closest('.ximg-item').style.display='none'">
-                <span class="ximg-cap">// scoring system</span>
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Constructed a <strong>DTW (Dynamic Time Warping)</strong> model for student action sequence similarity matching against standard references; optimized scoring logic to achieve <strong>95%+ evaluation accuracy</strong>. · 构建 DTW 动态时间规整模型，实现动作序列相似度匹配，优化判分逻辑，将评估准确率提升至 95%+。</div>
+              </div>
+            </div>
+            <div class="proj-imgs">
+              <div class="proj-img-box">
+                <img src="pic3.png" class="proj-img" alt="Pose Estimation" onerror="this.closest('.proj-img-box').style.display='none'">
+                <span class="proj-img-cap">// pose keypoint extraction</span>
+              </div>
+              <div class="proj-img-box">
+                <img src="pic4.png" class="proj-img" alt="Scoring System" onerror="this.closest('.proj-img-box').style.display='none'">
+                <span class="proj-img-cap">// automated scoring interface</span>
               </div>
             </div>
           </div>
@@ -626,36 +877,48 @@ footer {
       </div>
 
       <!-- P3 -->
-      <div class="xcard" id="p3">
-        <button class="xcard-btn" onclick="toggleX('p3')" aria-expanded="false">
-          <div>
-            <div class="xcard-title">💭 芯室 AI 心理情绪检测智能机</div>
-            <div class="xcard-brief">多模态特征融合实现 7 类情绪实时识别，情感识别准确率 93%+</div>
+      <div class="proj-entry" id="p3">
+        <button class="proj-trigger" onclick="toggleProj('p3')">
+          <div class="proj-t-idx">03</div>
+          <div class="proj-t-main">
+            <div class="proj-t-title">XinShi AI Psychological Emotion Detection System · 芯室 AI 心理情绪检测智能机</div>
+            <div class="proj-t-brief">
+              Real-time 7-class emotion recognition via multimodal feature fusion · 情感识别准确率 93%+
+            </div>
           </div>
-          <div class="xcard-meta">
-            <span class="xcard-period">2024.07 — 2024.10</span>
-            <span class="xcard-badge">情感计算工程师</span>
-            <span class="xcard-arr">▾</span>
+          <div class="proj-t-side">
+            <span class="proj-t-period">2024.07 — 2024.10</span>
+            <span class="proj-t-role bd bd-b">Emotion Computing Engineer · 情感计算工程师</span>
+            <span class="proj-t-arr">▾</span>
           </div>
         </button>
-        <div class="xcard-body" id="p3-b">
-          <div class="xcard-inner">
-            <p class="xcard-desc">
-              负责情感识别与计算加权情感核心模块开发，基于视频帧多维度特征提取与多模态数据融合，
-              实现用户实时情绪判定与心理健康量化评估。
+        <div class="proj-collapse" id="p3-col">
+          <div class="proj-content">
+            <p class="proj-en">
+              Responsible for the emotion recognition and weighted affective computing core module development.
+              Based on multidimensional feature extraction from video frames and multimodal data fusion,
+              the system achieves real-time user emotion judgment and quantitative mental health assessment.
             </p>
-            <div class="xtags">
-              <span class="xtag">情感计算</span><span class="xtag">面部表情识别</span>
-              <span class="xtag">多模态融合</span><span class="xtag">实时识别</span>
+            <p class="proj-zh">
+              负责情感识别与计算加权情感核心模块开发，基于视频帧多维度特征提取与多模态数据融合，实现用户实时情绪判定与心理健康量化评估。
+            </p>
+            <div class="proj-stacks">
+              <span class="proj-stack">Affective Computing</span>
+              <span class="proj-stack">Facial Expression Recognition</span>
+              <span class="proj-stack">Multimodal Fusion</span>
+              <span class="proj-stack">Real-time Inference</span>
             </div>
-            <div class="xsub">// 核心贡献</div>
-            <ul class="xbullets">
-              <li>基于视频帧人脸表情特征提取，完成 7 类基础情绪（惊讶、欣喜、平静、厌恶、恼怒、恐惧、哀伤）实时识别，情感识别评估算法准确率达 93%+。</li>
-            </ul>
-            <div class="ximg-row">
-              <div class="ximg-item">
-                <img src="pic5.png" alt="情绪识别" class="ximg" onerror="this.closest('.ximg-item').style.display='none'">
-                <span class="ximg-cap">// emotion detection</span>
+            <div class="contrib-title">Key Contributions · 核心贡献</div>
+            <div class="contrib-items">
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Implemented real-time recognition of <strong>7 basic emotions</strong> (Surprise · 惊讶, Joy · 欣喜, Calm · 平静, Disgust · 厌恶, Anger · 恼怒, Fear · 恐惧, Sadness · 哀伤) from facial expression features extracted from video frames; achieved <strong>93%+ recognition accuracy</strong>.</div>
+              </div>
+            </div>
+            <div class="proj-imgs">
+              <div class="proj-img-box">
+                <img src="pic5.png" class="proj-img" alt="Emotion Detection" onerror="this.closest('.proj-img-box').style.display='none'">
+                <span class="proj-img-cap">// emotion detection pipeline</span>
               </div>
             </div>
           </div>
@@ -663,71 +926,105 @@ footer {
       </div>
 
       <!-- P4 -->
-      <div class="xcard" id="p4">
-        <button class="xcard-btn" onclick="toggleX('p4')" aria-expanded="false">
-          <div>
-            <div class="xcard-title">📱 影刀 RPA 自动爬取发布知乎流媒体信息</div>
-            <div class="xcard-brief">影刀 RPA + 向量库实现知乎内容自动采集、入库、AI 文案生成与发布全链路自动化</div>
+      <div class="proj-entry" id="p4">
+        <button class="proj-trigger" onclick="toggleProj('p4')">
+          <div class="proj-t-idx">04</div>
+          <div class="proj-t-main">
+            <div class="proj-t-title">RPA-based Automated Social Media Content Pipeline · 影刀 RPA 自动爬取发布知乎流媒体信息</div>
+            <div class="proj-t-brief">
+              End-to-end automation: data scraping → structured storage → AI copywriting → publishing · 全链路自动化内容运营
+            </div>
           </div>
-          <div class="xcard-meta">
-            <span class="xcard-period">2024.10 — 2025.01</span>
-            <span class="xcard-badge gray">核心成员</span>
-            <span class="xcard-arr">▾</span>
+          <div class="proj-t-side">
+            <span class="proj-t-period">2024.10 — 2025.01</span>
+            <span class="proj-t-role bd bd-n">Core Member · 核心成员</span>
+            <span class="proj-t-arr">▾</span>
           </div>
         </button>
-        <div class="xcard-body" id="p4-b">
-          <div class="xcard-inner">
-            <p class="xcard-desc">
-              基于影刀 RPA 与向量库工具，设计知乎流媒体信息自动采集流程，
-              实现对指定关键词、账号、话题的数据抓取、结构化入库与 AI 文案自动生成发布，减少人工成本。
+        <div class="proj-collapse" id="p4-col">
+          <div class="proj-content">
+            <p class="proj-en">
+              Designed a Zhihu social media data collection and publishing automation pipeline based on
+              Yingdao RPA and vector database tooling. Implements keyword/account/topic-targeted scraping,
+              structured database storage, AI-generated content writing, and automated publishing.
             </p>
-            <div class="xtags">
-              <span class="xtag">影刀 RPA</span><span class="xtag">向量库</span>
-              <span class="xtag">AI Agent</span><span class="xtag">自动化运营</span>
+            <p class="proj-zh">
+              基于影刀 RPA 与向量库工具，设计知乎流媒体信息自动采集流程，实现对指定关键词、账号、话题的数据抓取、结构化入库与 AI 文案自动生成发布，显著降低人工运营成本。
+            </p>
+            <div class="proj-stacks">
+              <span class="proj-stack">Yingdao RPA · 影刀 RPA</span>
+              <span class="proj-stack">Vector DB · 向量库</span>
+              <span class="proj-stack">AI Agent</span>
+              <span class="proj-stack">Workflow Automation</span>
             </div>
-            <div class="xsub">// 核心贡献</div>
-            <ul class="xbullets">
-              <li>设计数据入库流程，将爬取到的流媒体信息自动写入数据库（标题、正文、发布时间、链接、标签、账号），保证数据可查询、可追踪、可复用。</li>
-              <li>自定义 AI Agent，根据数据库内容自动生成适合发布的知乎文案、标题和标签，结合影刀自动化流程完成内容发布，提高内容运营效率。</li>
-            </ul>
+            <div class="contrib-title">Key Contributions · 核心贡献</div>
+            <div class="contrib-items">
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Designed structured database ingestion workflow — automatically writing scraped media data (title, body, timestamp, URL, tags, account) into queryable, traceable, reusable storage. · 设计数据入库流程，将爬取信息自动写入数据库，保证数据可查询、可追踪、可复用。</div>
+              </div>
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Built custom <strong>AI Agent</strong> to automatically generate Zhihu-optimized copy, titles, and tags from database content; integrated with RPA for full-pipeline content publishing. · 构建自定义 AI Agent，根据数据库内容自动生成知乎文案与标签，结合影刀实现全流程自动发布。</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- P5 -->
-      <div class="xcard" id="p5">
-        <button class="xcard-btn" onclick="toggleX('p5')" aria-expanded="false">
-          <div>
-            <div class="xcard-title">🔍 基于 Dify 的知识库智能问答与工作流自动化系统</div>
-            <div class="xcard-brief">本地部署 Dify 平台，构建 RAG 检索、多步骤 Workflow 与文献辅助 AI 智能体</div>
+      <div class="proj-entry" id="p5">
+        <button class="proj-trigger" onclick="toggleProj('p5')">
+          <div class="proj-t-idx">05</div>
+          <div class="proj-t-main">
+            <div class="proj-t-title">Dify-based Knowledge Q&amp;A &amp; Workflow Automation System · 基于 Dify 的知识库智能问答与工作流自动化系统</div>
+            <div class="proj-t-brief">
+              Local LLM deployment with RAG retrieval, multi-step Workflow, and academic literature assistant · 文献辅助 AI 智能体
+            </div>
           </div>
-          <div class="xcard-meta">
-            <span class="xcard-period">2025.03 — 2025.06</span>
-            <span class="xcard-badge gray">核心成员</span>
-            <span class="xcard-arr">▾</span>
+          <div class="proj-t-side">
+            <span class="proj-t-period">2025.03 — 2025.06</span>
+            <span class="proj-t-role bd bd-n">Core Member · 核心成员</span>
+            <span class="proj-t-arr">▾</span>
           </div>
         </button>
-        <div class="xcard-body" id="p5-b">
-          <div class="xcard-inner">
-            <p class="xcard-desc">
-              本地部署基于 Dify 的大模型应用开发平台，完成模型、知识库调用、数据集配置、
-              Prompt 编排与应用发布，实现面向特定业务场景的智能问答与内容生成服务。
+        <div class="proj-collapse" id="p5-col">
+          <div class="proj-content">
+            <p class="proj-en">
+              Locally deployed a Dify-based LLM application platform. Configured model APIs, knowledge bases,
+              datasets, prompt orchestration, and application publishing to deliver intelligent Q&amp;A
+              and content generation services for specific business scenarios.
             </p>
-            <div class="xtags">
-              <span class="xtag">Dify</span><span class="xtag">RAG</span>
-              <span class="xtag">Workflow</span><span class="xtag">知识库</span>
-              <span class="xtag">Prompt Engineering</span>
+            <p class="proj-zh">
+              本地部署基于 Dify 的大模型应用开发平台，完成模型、知识库调用、数据集配置、Prompt 编排与应用发布，实现面向特定业务场景的智能问答与内容生成服务。
+            </p>
+            <div class="proj-stacks">
+              <span class="proj-stack">Dify</span>
+              <span class="proj-stack">RAG</span>
+              <span class="proj-stack">Workflow</span>
+              <span class="proj-stack">Knowledge Base</span>
+              <span class="proj-stack">Prompt Engineering</span>
+              <span class="proj-stack">Ollama</span>
             </div>
-            <div class="xsub">// 核心贡献</div>
-            <ul class="xbullets">
-              <li>实现本地文件 RAG 检索增强回答模块，完成本地文档加载、切分、向量化存储与相似度检索流程，将用户问题与本地知识库内容关联匹配。</li>
-              <li>设计智能体工作流与自动化处理流程，基于 Dify Workflow/Agent 能力，配置多步骤任务流，实现问题理解、知识检索、模型推理、结果输出等流程化处理。</li>
-              <li>独立搭建文献辅助 AI 智能体，实现文献查找、内容检索、引用生成、实验辅助分析等能力，支持多轮问答与上下文追踪，提高论文研究效率。</li>
-            </ul>
-            <div class="ximg-row">
-              <div class="ximg-item">
-                <img src="pic6.png" alt="Dify工作流" class="ximg" onerror="this.closest('.ximg-item').style.display='none'">
-                <span class="ximg-cap">// dify workflow</span>
+            <div class="contrib-title">Key Contributions · 核心贡献</div>
+            <div class="contrib-items">
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Implemented local document <strong>RAG retrieval-augmented answering</strong>: document loading, chunking, vectorization, and similarity retrieval pipeline linking user queries to local knowledge bases. · 实现本地文件 RAG 检索增强回答，完成文档加载、切分、向量化存储与相似度检索全流程。</div>
+              </div>
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Designed multi-step <strong>Dify Workflow/Agent</strong> task flows covering problem understanding, knowledge retrieval, model reasoning, and structured output. · 设计多步骤任务流，实现问题理解、知识检索、模型推理、结果输出等流程化处理。</div>
+              </div>
+              <div class="contrib-row">
+                <div class="contrib-pip"></div>
+                <div>Independently built an <strong>academic literature assistant agent</strong> supporting paper search, citation generation, experimental analysis assistance, and multi-turn Q&amp;A with full context tracking. · 独立搭建文献辅助 AI 智能体，支持文献查找、引用生成、实验辅助分析等能力，支持多轮问答与上下文追踪。</div>
+              </div>
+            </div>
+            <div class="proj-imgs">
+              <div class="proj-img-box">
+                <img src="pic6.png" class="proj-img" alt="Dify Workflow" onerror="this.closest('.proj-img-box').style.display='none'">
+                <span class="proj-img-cap">// dify workflow pipeline</span>
               </div>
             </div>
           </div>
@@ -738,293 +1035,132 @@ footer {
   </div>
 </section>
 
-<!-- ══════════ INTERNSHIP ══════════ -->
-<section class="sec" id="internship">
+<!-- ══════════ FUNDED RESEARCH ══════════ -->
+<section class="sec" id="funded">
   <div class="wrap">
-    <div class="sec-kicker">EXPERIENCE</div>
-    <h2 class="sec-title">实习经历</h2>
-    <div class="sec-bar"></div>
-    <div class="xlist">
+    <div class="sec-label">Participation in Funded Research Projects</div>
+    <div class="sec-title">参与科研项目 <span>· Research Grants &amp; Projects</span></div>
 
-      <!-- I1 -->
-      <div class="xcard" id="i1">
-        <button class="xcard-btn" onclick="toggleX('i1')" aria-expanded="false">
-          <div>
-            <div class="xcard-title">福州联合晓智信息技术有限公司</div>
-            <div class="xcard-brief">大模型研发与微调 · 计算机视觉落地 · 智能体开发 · 项目申报</div>
-          </div>
-          <div class="xcard-meta">
-            <span class="xcard-period">2024.10 — 2026.03</span>
-            <span class="xcard-badge">AI 算法工程师</span>
-            <span class="xcard-arr">▾</span>
-          </div>
-        </button>
-        <div class="xcard-body" id="i1-b">
-          <div class="xcard-inner">
-            <div class="xsub">// 工作职责</div>
-            <ul class="xbullets">
-              <li>负责技术方案与项目申报，独立制定 AI 技术解决方案，并主导编写了多个项目的申报书。</li>
-              <li>负责大模型的研发与微调，独立负责大模型的调研与微调，针对特定业务场景进行模型优化。</li>
-              <li>主导「AI + 球员交易卡识别与分类」项目，独立负责百万级图像秒级检索与非结构化信息提取的开发、部署与调优。</li>
-              <li>参与智慧体育项目，独立负责太极拳与八段锦动作的识别、评估与调优，显著提高评估准确率。</li>
-              <li>参与多个流媒体自动化运营模块开发，基于影刀 RPA 与向量库技术实现知乎平台数据自动抓取、结构化入库与 AI 文案生成发布全流程。</li>
-              <li>基于 DIFY 平台搭建多场景 AI 智能体，实现文献辅助检索、本地知识库 RAG 问答、结构化数据处理与智能交互能力。</li>
-            </ul>
+    <div class="fund-list">
+
+      <div class="fund-item">
+        <div class="fund-n">01</div>
+        <div class="fund-body">
+          <div class="fund-en">National Natural Science Foundation of China (General Program) — Body Posture Sequence Analysis and Lightweight Hazardous Motion Detection Model Research</div>
+          <div class="fund-zh">国家自然科学基金面上项目 — 体育运动姿态序列化及危险动作检测轻量化模型研究</div>
+          <div class="fund-meta">
+            <span class="bd bd-b">NSFC · 国家自然科学基金</span>
+            <span class="bd bd-g">¥550,000</span>
+            <span class="fund-code">Grant No. 62277010</span>
           </div>
         </div>
       </div>
 
-      <!-- I2 -->
-      <div class="xcard" id="i2">
-        <button class="xcard-btn" onclick="toggleX('i2')" aria-expanded="false">
-          <div>
-            <div class="xcard-title">福州榕智信息科技</div>
-            <div class="xcard-brief">后端接口开发 · 前端页面实现 · 模块功能交付</div>
-          </div>
-          <div class="xcard-meta">
-            <span class="xcard-period">2023.09 — 2024.03</span>
-            <span class="xcard-badge gray">全栈工程师</span>
-            <span class="xcard-arr">▾</span>
-          </div>
-        </button>
-        <div class="xcard-body" id="i2-b">
-          <div class="xcard-inner">
-            <div class="xsub">// 工作职责</div>
-            <ul class="xbullets">
-              <li>负责后端接口开发，业务逻辑实现与功能模块编写。</li>
-              <li>完成前端页面开发、样式实现与基础交互调试。</li>
-              <li>按项目需求完成分配的开发任务，保障模块功能正常交付与稳定运行。</li>
-            </ul>
+      <div class="fund-item">
+        <div class="fund-n">02</div>
+        <div class="fund-body">
+          <div class="fund-en">Natural Science Foundation of Fujian Province (General Program) — Multi-Modal Large Language Model based Depression Recognition and Rapid Screening for College Students</div>
+          <div class="fund-zh">福建省自然科学基金面上项目 — 基于多模态大模型的大学生抑郁症识别与快速筛查研究</div>
+          <div class="fund-meta">
+            <span class="bd bd-b">Fujian NSF · 福建省自然科学基金</span>
+            <span class="bd bd-g">¥90,000</span>
+            <span class="fund-code">Grant No. 2026J001409</span>
           </div>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ PUBLICATIONS ══════════ -->
-<section class="sec alt" id="publications">
-  <div class="wrap">
-    <div class="sec-kicker">RESEARCH</div>
-    <h2 class="sec-title">学术论文</h2>
-    <div class="sec-bar"></div>
-    <div class="pub-list">
-
-      <div class="pub-card">
-        <span class="pub-n">01</span>
-        <div>
-          <div class="pub-title">Enhancing Long-Term Action Quality Assessment: A Dual-Modality Dataset and Causal Cross-Modal Framework for Trampoline Gymnastics</div>
-          <div class="pub-badges">
-            <span class="pb pb-1st">第一作者</span>
-            <span class="pb pb-vn">Sensors</span>
-            <span class="pb pb-q1">中科院三区</span>
+      <div class="fund-item">
+        <div class="fund-n">03</div>
+        <div class="fund-body">
+          <div class="fund-en">Key R&amp;D Project on Industrial Internet Technology Innovation and Industrialization — Intelligent Prediction and Full-Scenario Optimization for Textile Production (Auto Cotton-Blending AI Agent)</div>
+          <div class="fund-zh">工业互联网技术创新重点攻关及产业化项目 — 纺织生产全场景智能预测与优化解决方案（自动配棉智能体）</div>
+          <div class="fund-meta">
+            <span class="bd bd-n">工业互联网 · Industrial Internet</span>
+            <span class="bd bd-g">AI Agent</span>
           </div>
         </div>
       </div>
 
-      <div class="pub-card">
-        <span class="pub-n">02</span>
-        <div>
-          <div class="pub-title">Enhancing Long-Term Action Quality Assessment with Hypergraph Transformer Network</div>
-          <div class="pub-badges">
-            <span class="pb pb-1st">第一作者</span>
-            <span class="pb pb-vn">IEEE TCSVT</span>
-            <span class="pb pb-top">中科院一区 TOP</span>
-            <span class="pb pb-rev">Revise</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub-card">
-        <span class="pub-n">03</span>
-        <div>
-          <div class="pub-title">Nano-EmoX: Unifying Multimodal Emotional Intelligence from Perception to Empathy</div>
-          <div class="pub-badges">
-            <span class="pb pb-2nd">第二作者</span>
-            <span class="pb pb-vn">CVPR</span>
-            <span class="pb pb-ccfa">CCF-A</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub-card">
-        <span class="pub-n">04</span>
-        <div>
-          <div class="pub-title">TaiChi-AQA: A Dataset and Framework for Action Quality Assessment and Visual Analysis</div>
-          <div class="pub-badges">
-            <span class="pb pb-2nd">第二作者</span>
-            <span class="pb pb-vn">IET Computer Vision</span>
-            <span class="pb pb-vn">CCF-C</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="grant-head">// 参与课题项目</div>
-    <div class="glist">
-      <div class="gitem">
-        <span class="gdot"></span>
-        <div>
-          <strong>国家自然科学基金面上项目</strong>（编号: 62277010，55 万元）<br>
-          体育运动姿态序列化及危险动作检测轻量化模型研究
-        </div>
-      </div>
-      <div class="gitem">
-        <span class="gdot"></span>
-        <div>
-          <strong>福建省自然科学基金面上项目</strong>（编号: 2026J001409，9 万元）<br>
-          基于多模态大模型的大学生抑郁症识别与快速筛查研究
-        </div>
-      </div>
-      <div class="gitem">
-        <span class="gdot"></span>
-        <div>
-          <strong>工业互联网技术创新重点攻关及产业化项目</strong><br>
-          纺织生产全场景智能预测与优化解决方案 — 自动配棉智能体
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ AWARDS ══════════ -->
-<section class="sec" id="awards">
-  <div class="wrap">
-    <div class="sec-kicker">HONORS</div>
-    <h2 class="sec-title">获奖荣誉</h2>
-    <div class="sec-bar"></div>
-    <div class="aw-grid">
-      <div class="aw-item"><span class="aw-icon">🥇</span>研究生期间获<strong>优秀学生一等奖学金</strong></div>
-      <div class="aw-item"><span class="aw-icon">🏅</span>本科期间获两次三等、两次<strong>二等优秀学生奖学金</strong></div>
-      <div class="aw-item"><span class="aw-icon">📐</span>第二十五届"高教社杯"全国大学生数学建模竞赛<strong>福建赛区一等奖</strong></div>
-      <div class="aw-item"><span class="aw-icon">🔬</span>华为杯第二十一届中国研究生数学建模竞赛<strong>国家三等奖</strong></div>
-      <div class="aw-item"><span class="aw-icon">🤖</span>第二十五、二十六届中国机器人及人工智能大赛<strong>福建省三等奖</strong></div>
-      <div class="aw-item"><span class="aw-icon">⭐</span><strong>优秀毕业生</strong>、优秀共青团员、校三好学生</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ CONTACT ══════════ -->
-<section class="sec alt" id="contact">
-  <div class="wrap">
-    <div class="sec-kicker">CONTACT</div>
-    <h2 class="sec-title">联系方式</h2>
-    <div class="sec-bar"></div>
-    <p style="font-size:.88rem;color:var(--txt2);margin-bottom:22px;">
-      欢迎学术交流、项目合作或任何 AI 技术相关话题 👋
-    </p>
-    <div class="con-row">
-      <!-- 邮箱点击后才显示，防止爬虫 -->
-      <a href="#" class="citem" id="emailBtn" onclick="revealEmail(event)">
-        <span class="cicon">✉️</span>
-        <div>
-          <div class="clabel">email</div>
-          <div class="cval" id="emailVal">点击显示邮箱</div>
-        </div>
-      </a>
-      <!-- ↓ 替换 YOUR_GITHUB -->
-      <a href="https://github.com/mlxger" target="_blank" rel="noopener" class="citem">
-        <span class="cicon">🐙</span>
-        <div>
-          <div class="clabel">github</div>
-          <div class="cval">github.com/mlxger</div>
-        </div>
-      </a>
-      <div class="citem">
-        <span class="cicon">📍</span>
-        <div>
-          <div class="clabel">location</div>
-          <div class="cval">福建 · 福州</div>
-        </div>
-      </div>
-      <div class="citem">
-        <span class="cicon">🎓</span>
-        <div>
-          <div class="clabel">institution</div>
-          <div class="cval">福建师范大学</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
-  <div class="foot-txt">
-    © 2025 Fengyan Lin &nbsp;·&nbsp;
-    <a href="https://github.com/mlxger" target="_blank">GitHub</a>
-    &nbsp;·&nbsp; Powered by GitHub Pages
-    <br>AI Agent · Computer Vision · LLM · IEEE Student Member
+  <div class="foot-inner">
+    <div class="foot-name">YOUR NAME &nbsp;(你的中文名)</div>
+    <div class="foot-links">
+      <a href="https://github.com/mlxger" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" id="footEmail" onclick="showEmail(event)">Email</a>
+      <a href="https://www.fzu.edu.cn" target="_blank" rel="noopener">Fujian Normal University · 福建师范大学</a>
+    </div>
+    <div class="foot-copy">
+      © 2025 YOUR NAME &nbsp;·&nbsp; Powered by GitHub Pages &nbsp;·&nbsp; Last updated June 2025
+    </div>
   </div>
 </footer>
 
 <script>
-/* ── EXPAND TOGGLE ──────────────────────────────── */
-function toggleX(id) {
-  const card = document.getElementById(id);
-  const body = document.getElementById(id + '-b');
-  const btn  = card.querySelector('.xcard-btn');
-  const isOpen = card.classList.contains('open');
+/* ── PROJECT ACCORDION ────────────────────────── */
+function toggleProj(id) {
+  const entry = document.getElementById(id);
+  const col   = document.getElementById(id + '-col');
+  const open  = entry.classList.contains('open');
 
-  if (isOpen) {
-    /* closing: set explicit px first, then animate to 0 */
-    body.style.maxHeight = body.scrollHeight + 'px';
+  if (open) {
+    col.style.maxHeight = col.scrollHeight + 'px';
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      body.style.maxHeight = '0';
+      col.style.maxHeight = '0';
     }));
-    card.classList.remove('open');
-    btn.setAttribute('aria-expanded', 'false');
+    entry.classList.remove('open');
   } else {
-    card.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-    body.style.maxHeight = body.scrollHeight + 'px';
-    body.addEventListener('transitionend', () => {
-      if (card.classList.contains('open')) body.style.maxHeight = 'none';
-    }, { once: true });
+    entry.classList.add('open');
+    col.style.maxHeight = col.scrollHeight + 'px';
+    col.addEventListener('transitionend', function onEnd() {
+      if (entry.classList.contains('open')) col.style.maxHeight = 'none';
+      col.removeEventListener('transitionend', onEnd);
+    });
   }
 }
 
-/* ── NAV HAMBURGER ──────────────────────────────── */
-const navHam  = document.getElementById('navHam');
+/* ── HAMBURGER ────────────────────────────────── */
+const burger  = document.getElementById('burger');
 const navMenu = document.getElementById('navMenu');
-navHam.addEventListener('click', () => {
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
   navMenu.classList.toggle('open');
-  navHam.classList.toggle('open');
 });
-navMenu.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => {
-    navMenu.classList.remove('open');
-    navHam.classList.remove('open');
-  })
-);
+navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  burger.classList.remove('open');
+  navMenu.classList.remove('open');
+}));
 
-/* ── NAV ACTIVE HIGHLIGHT ───────────────────────── */
-const secs     = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-ul a');
+/* ── ACTIVE SECTION HIGHLIGHT ─────────────────── */
+const secEls  = document.querySelectorAll('section[id]');
+const navAs   = document.querySelectorAll('.nav-menu a');
 window.addEventListener('scroll', () => {
   let cur = '';
-  secs.forEach(s => { if (window.scrollY + 70 >= s.offsetTop) cur = s.id; });
-  navLinks.forEach(a => {
-    const match = a.getAttribute('href') === '#' + cur;
-    a.classList.toggle('active', match);
-  });
+  secEls.forEach(s => { if (window.scrollY + 60 >= s.offsetTop) cur = s.id; });
+  navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
 }, { passive: true });
 
-/* ── EMAIL ANTI-SCRAPE ──────────────────────────── */
-function revealEmail(e) {
+/* ── EMAIL ANTI-SCRAPE ────────────────────────── */
+let emailRevealed = false;
+function showEmail(e) {
   e.preventDefault();
-  const u = 'fengyanlin128';   // ← 替换: @ 前面的部分
-  const d = 'gmail.com';     // ← 替换: 域名部分
-  const full = u + '@' + d;
-  const el  = document.getElementById('emailVal');
-  const btn = document.getElementById('emailBtn');
-  if (el.textContent.includes('点击')) {
-    el.textContent = full;
-    btn.href = 'mailto:' + full;
+  const u = 'fengyanlin128';   // ← 替换：@ 前半段
+  const d = 'gmail.com';     // ← 替换：邮箱域名
+  const addr = u + '@' + d;
+
+  const btn  = document.getElementById('emailBtn');
+  const foot = document.getElementById('footEmail');
+
+  if (!emailRevealed) {
+    emailRevealed = true;
+    if (btn)  { btn.innerHTML = '✉&ensp;' + addr; btn.href = 'mailto:' + addr; }
+    if (foot) { foot.textContent = addr; foot.href = 'mailto:' + addr; }
   } else {
-    window.location.href = 'mailto:' + full;
+    window.location.href = 'mailto:' + addr;
   }
 }
 </script>
