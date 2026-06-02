@@ -451,6 +451,37 @@ footer{
   .fund-item{flex-direction:column;gap:5px}
   .edu-row{gap:10px}
   .edu-period{min-width:76px;font-size:.65rem}
+  .proj-trigger{
+    flex-wrap: nowrap; /* 取消换行，避免子元素乱序 */
+    flex-direction: column; /* 改为纵向排列，适配小屏 */
+    gap: 8px !important; /* 增加内部间距 */
+  }
+  .proj-t-main{
+    width: 100%; /* 占满宽度 */
+  }
+  .proj-t-title{
+    font-size: .82rem; /* 小屏缩小字体 */
+    white-space: normal; /* 强制换行 */
+    word-break: break-word; /* 长单词/中文换行 */
+  }
+  .proj-t-brief{
+    font-size: .74rem; /* 小屏缩小字体 */
+    color: var(--txt3);
+    white-space: normal;
+    word-break: break-word;
+  }
+  .proj-t-side{
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-left: 0 !important; /* 取消左侧偏移 */
+    width: 100%; /* 占满宽度 */
+    justify-content: flex-start; /* 左对齐 */
+    padding-left: 0; /* 重置内边距 */
+  }
+  .proj-t-idx{
+    min-width: 20px; /* 缩小序号宽度 */
+  }
 }
 @media(max-width:420px){
   :root{--px:14px}
