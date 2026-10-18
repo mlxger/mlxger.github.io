@@ -1,7 +1,5 @@
 # Fengyan Lin · Personal Homepage
 
-参考 ZhouKanglei 个人网站的学术主页布局，迁移自原 mlxger 主页。纯 HTML / CSS / JavaScript，不需要 npm、Hugo 或 Jekyll 构建。
-
 ## 本地预览
 
 在本目录打开 PowerShell，运行：
